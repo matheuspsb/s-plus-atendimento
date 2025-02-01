@@ -10,8 +10,12 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 import FormLogin from '@/components/form/login/login';
 import BackgroundPattern from '@/components/ui/background-pattern/BackgroundPattern';
+import SliderRender from '@/components/ui/slider/Slider';
 import LoginCardWrapper from '@/components/wrapper/login-card/LoginCardWrapper';
 import LoginWrapper from '@/components/wrapper/login/LoginWrapper';
+import { sliderText } from '@/constants/slider-text';
+import Image from 'next/image';
+import imgMain from '../../assets/images/img-a2-login.svg';
 
 const Login = () => {
     const downMD = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
@@ -82,10 +86,23 @@ const Login = () => {
                             <Grid item xs={12}>
                                 <Grid item container justifyContent="center" sx={{ pb: 8 }}>
                                     <Grid item xs={10} lg={8} sx={{ '& .slick-list': { pb: 2 } }}>
+                                        <SliderRender items={sliderText} />
                                     </Grid>
                                 </Grid>
                             </Grid>
-                            <Grid item xs={12} sx={{ position: 'relative' }}>                     
+                            <Grid item xs={12} sx={{ position: 'relative' }}>
+                                <Image
+                                    alt="Auth method"
+                                    src={imgMain}
+                                    style={{
+                                        maxWidth: '100%',
+                                        margin: '0 auto',
+                                        display: 'block',
+                                        width: 300,
+                                        position: 'relative',
+                                        zIndex: 5
+                                    }}
+                                />
                             </Grid>
                         </Grid>
                     </BackgroundPattern>

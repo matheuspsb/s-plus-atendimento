@@ -1,7 +1,7 @@
-import AuthPattern from '@/assets/images/img-a2-grid.svg';
 import Box from '@mui/material/Box';
 import CardMedia from '@mui/material/CardMedia';
 import { ReactElement } from 'react';
+import AuthPattern from '../../../assets/images/img-a2-grid.svg';
 
 const BackgroundPattern = ({ children }: { children: ReactElement | ReactElement[] }) => {
     return (
