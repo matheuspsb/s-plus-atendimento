@@ -9,6 +9,7 @@ import { Theme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 import FormLogin from '@/components/form/login/login';
+import BackgroundPattern from '@/components/ui/background-pattern/BackgroundPattern';
 import LoginCardWrapper from '@/components/wrapper/login-card/LoginCardWrapper';
 import LoginWrapper from '@/components/wrapper/login/LoginWrapper';
 
@@ -75,33 +76,20 @@ const Login = () => {
                         </Grid>
                     </Grid>
                 </Grid>
-                {/* <Grid item md={6} lg={5} sx={{ position: 'relative', alignSelf: 'stretch', display: { xs: 'none', md: 'block' } }}>
-                    <BackgroundPattern2>
+                <Grid item md={6} lg={5} sx={{ position: 'relative', alignSelf: 'stretch', display: { xs: 'none', md: 'block' } }}>
+                    <BackgroundPattern>
                         <Grid item container justifyContent="center">
                             <Grid item xs={12}>
                                 <Grid item container justifyContent="center" sx={{ pb: 8 }}>
                                     <Grid item xs={10} lg={8} sx={{ '& .slick-list': { pb: 2 } }}>
-                                        <AuthSlider items={items} />
                                     </Grid>
                                 </Grid>
                             </Grid>
-                            <Grid item xs={12} sx={{ position: 'relative' }}>
-                                <img
-                                    alt="Auth method"
-                                    src={imgMain}
-                                    style={{
-                                        maxWidth: '100%',
-                                        margin: '0 auto',
-                                        display: 'block',
-                                        width: 300,
-                                        position: 'relative',
-                                        zIndex: 5
-                                    }}
-                                />
+                            <Grid item xs={12} sx={{ position: 'relative' }}>                     
                             </Grid>
                         </Grid>
-                    </BackgroundPattern2>
-                </Grid>*/}
+                    </BackgroundPattern>
+                </Grid>
             </Grid> 
         </LoginWrapper>
     );
