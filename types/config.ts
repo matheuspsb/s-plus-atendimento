@@ -38,10 +38,5 @@ export type CustomizationProps = {
     presetColor: PresetColor;
     themeDirection: ThemeDirection;
     container: boolean;
-    onChangePresetColor: (presetColor: PresetColor) => void;
-    onChangeContainer: (container: boolean) => void;
-    onChangeFontFamily: (fontFamily: FontFamily) => void;
-    onChangeBorderRadius: (event: Event, newValue: number | number[]) => void;
-    onChangeOutlinedField: (outlinedFilled: boolean) => void;
     onReset: () => void;
 };
