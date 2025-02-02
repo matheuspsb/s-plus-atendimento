@@ -15,7 +15,7 @@ import LoginCardWrapper from '@/components/wrapper/login-card/LoginCardWrapper';
 import LoginWrapper from '@/components/wrapper/login/LoginWrapper';
 import { sliderText } from '@/constants/slider-text';
 import Image from 'next/image';
-import imgMain from '../../assets/images/img-a2-login.svg';
+import imgMain from '../../../assets/images/img-a2-login.svg';
 
 const Login = () => {
     const downMD = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
@@ -51,10 +51,10 @@ const Login = () => {
                                         <Grid item>
                                             <Stack alignItems="center" justifyContent="center" spacing={1}>
                                                 <Typography color="secondary.main" gutterBottom variant={downMD ? 'h3' : 'h2'}>
-                                                    Hi, Welcome Back
+                                                    Olá, seja bem-vindo
                                                 </Typography>
                                                 <Typography variant="caption" fontSize="16px" textAlign={downMD ? 'center' : 'inherit'}>
-                                                    Enter your credentials to continue
+                                                    Informe seus dados de acesso
                                                 </Typography>
                                             </Stack>
                                         </Grid>
@@ -70,13 +70,15 @@ const Login = () => {
                                                     variant="subtitle1"
                                                     sx={{ textDecoration: 'none' }}
                                                 >
-                                                    Don&apos;t have an account?
+                                                    Não possui uma conta?
                                                 </Typography>
                                             </Grid>
                                         </Grid>
                                     </Grid>
                                 </LoginCardWrapper>
                             </Stack>
+                        </Grid>
+                        <Grid item xs={12} sx={{ m: 3 }}>
                         </Grid>
                     </Grid>
                 </Grid>
@@ -92,13 +94,13 @@ const Login = () => {
                             </Grid>
                             <Grid item xs={12} sx={{ position: 'relative' }}>
                                 <Image
-                                    alt="Auth method"
+                                    alt="login image"
                                     src={imgMain}
+                                    width={300}
                                     style={{
                                         maxWidth: '100%',
                                         margin: '0 auto',
                                         display: 'block',
-                                        width: 300,
                                         position: 'relative',
                                         zIndex: 5
                                     }}

@@ -40,8 +40,8 @@ const BackgroundPattern = ({ children }: { children: ReactElement | ReactElement
             {children}
             <CardMedia
                 component="img"
-                sx={{ zIndex: 1, position: 'absolute', bottom: 0, right: 0, width: 1 }}
-                src={AuthPattern}
+                sx={{ zIndex: 1, position: 'absolute', bottom: 0, right: 0 }}
+                src={AuthPattern.src}
                 alt="pattern"
             />
         </Box>
