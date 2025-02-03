@@ -6,7 +6,7 @@ import { menuService } from "@/services/menu/menu.service";
 import { AppBar, Box, Container, Toolbar, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { useEffect } from "react";
-import MainContentStyled from "./MainContentStyled";
+import MainContentStyled from "./dashboard/MainContentStyled";
 
 export default function MainLayout({
   children,

@@ -1,9 +1,10 @@
 import { menuRoutes } from '@/config/routes';
 import { NavItemType } from '@/types/navbar.types';
-import { IconDashboard } from '@tabler/icons-react';
+import { IconDashboard, IconMessageCircle } from '@tabler/icons-react';
 
 const icons = {
   IconDashboard: IconDashboard,
+  IconService: IconMessageCircle 
 };
 
 const menu: NavItemType = {
@@ -18,6 +19,14 @@ const menu: NavItemType = {
 			url: menuRoutes.DASHBOARD,
 			breadcrumbs: false,
 		},
+    {
+      id: 'service',
+      title: 'Atendimento',
+      type: 'item',
+      icon: icons.IconService,
+      url: menuRoutes.SERVICE,
+      breadcrumbs: false,
+    }
 	],
 };
 
