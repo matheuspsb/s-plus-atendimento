@@ -72,7 +72,7 @@ const ChatMainPage = () => {
 
     useLayoutEffect(() => {
         if (scrollRef?.current) {
-            // @ts-ignore
+            // @ts-expect-error - to access scrollIntoView
             scrollRef.current.scrollIntoView();
         }
     });
@@ -151,7 +151,7 @@ const ChatMainPage = () => {
         setMessage(message + emojiObject.emoji);
     };
 
-    const [anchorElEmoji, setAnchorElEmoji] = React.useState<any>();
+    const [anchorElEmoji, setAnchorElEmoji] = React.useState<any>(); // eslint-disable-line
     const handleOnEmojiButtonClick = (event: React.MouseEvent<HTMLButtonElement> | undefined) => {
         setAnchorElEmoji(anchorElEmoji ? null : event?.currentTarget);
     };
@@ -251,7 +251,7 @@ const ChatMainPage = () => {
                                 >
                                     <Box sx={{ py: 3, pl: 4, pr: 1 }}>
                                         <ChartHistory theme={theme} user={user} data={data} />
-                                        {/* @ts-ignore */}
+                                        {/* // @ts-expect-error - to remove */}
                                         <span ref={scrollRef} />
                                     </Box>
                                 </PerfectScrollbar>

@@ -1,21 +1,18 @@
-import React, { ExoticComponent, ReactElement, Ref, forwardRef } from 'react';
-
-// material-ui
 import Box from '@mui/material/Box';
 import Collapse from '@mui/material/Collapse';
 import Fade from '@mui/material/Fade';
 import Grow from '@mui/material/Grow';
 import Slide from '@mui/material/Slide';
 import Zoom from '@mui/material/Zoom';
+import React, { ExoticComponent, ReactElement, Ref, forwardRef } from 'react';
 
 interface TSProps {
     children?: ReactElement;
-    position?: string;
+    position?: 'top-left' | 'top-right' | 'top' | 'bottom-left' | 'bottom-right' | 'bottom';
     sx?: React.CSSProperties;
     in?: boolean;
-    type?: string;
+    type?: 'grow' | 'collapse' | 'fade' | 'slide' | 'zoom';
     direction?: 'up' | 'right' | 'left' | 'down';
-    [others: string]: any;
 }
 
 const Transitions = forwardRef(({ children, position = 'top-left', type = 'grow', direction = 'up',  ...others }: TSProps, ref: Ref<ExoticComponent>) => {

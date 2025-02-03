@@ -41,9 +41,9 @@ const MainContentStyled = styled('main', {
         }),
         marginLeft: 0,
         marginTop: 88,
-        width: `calc(100% - ${drawerWidth}px)`,
+        width: `calc(100% - ${drawerWidth - 72}px)`,
         [theme.breakpoints.up('md')]: {
-            marginTop: 88
+            marginTop: 80
         }
     }),
     [theme.breakpoints.down('md')]: {

@@ -8,7 +8,7 @@ interface avatarProps extends AvatarProps {
     src?: string;
     className?: string;
     color?: string;
-    component?: OverridableComponent<any>
+    component?: OverridableComponent<any> // eslint-disable-line
     target?: LinkTarget;
     href?: string;
     sx?: AvatarProps['sx'];

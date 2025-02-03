@@ -24,7 +24,9 @@ export default function MainLayout({
   const menuOrientation = 'vertical';
 
 useEffect(() => {
-    downMD && menuService.handlerDrawerOpen(false);
+  if (downMD) {
+    menuService.handlerDrawerOpen(false);
+  }
 }, [downMD]);
 
   const menu = <Sidebar />
