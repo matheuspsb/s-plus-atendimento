@@ -12,8 +12,8 @@ interface SubCardProps {
     contentClass?: string;
     darkTitle?: boolean;
     secondary?: ReactNode | string;
-    sx?: {};
-    contentSX?: {};
+    sx?: object;
+    contentSX?: object;
     title?: ReactNode | string;
 }
 

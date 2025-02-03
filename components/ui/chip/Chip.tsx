@@ -3,7 +3,7 @@ import { alpha, useTheme } from '@mui/material/styles';
 
 interface chipProps extends ChipProps {
     chipcolor?: string;
-    sx?: {};
+    sx?: object;
     disabled?: boolean;
     label?: string;
     avatar?: React.ReactElement | undefined;

@@ -1,5 +1,6 @@
 "use client"
 
+import Loader from "@/components/ui/loader/Loader";
 import Header from "@/layout/header";
 import Sidebar from "@/layout/sidebar/Sidebar";
 import { menuService } from "@/services/menu/menu.service";
@@ -15,7 +16,7 @@ export default function MainLayout({
 }>) {
   const theme = useTheme();
   const downMD = useMediaQuery(theme.breakpoints.down('md'));
-  const { menuMaster } = menuService.useGetMenuMaster();
+  const { menuMaster, menuMasterLoading } = menuService.useGetMenuMaster();
   const drawerOpen = menuMaster?.isDashboardDrawerOpened;
 
   const isHorizontal = downMD;
@@ -28,7 +29,7 @@ useEffect(() => {
 
   const menu = <Sidebar />
 
-  // if (menuMasterLoading) return <Loader />;
+  if (menuMasterLoading) return <Loader />;
 
   return (
     <Box sx={{ display: 'flex' }}>
