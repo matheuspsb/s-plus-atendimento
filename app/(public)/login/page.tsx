@@ -32,7 +32,6 @@ const Login = () => {
                         justifyContent={{ xs: 'center', md: 'space-between' }}
                     >
                         <Grid item sx={{ display: { xs: 'none', md: 'block' }, m: 3 }}>
-                            Logo
                         </Grid>
                         <Grid
                             item
@@ -44,7 +43,6 @@ const Login = () => {
                         >
                             <Stack justifyContent="center" alignItems="center" spacing={5} m={2}>
                                 <Box sx={{ display: { xs: 'block', md: 'none' } }}>
-                                    Logo 2
                                 </Box>
                                 <LoginCardWrapper border={downLG}>
                                     <Grid container spacing={2} justifyContent="center">
