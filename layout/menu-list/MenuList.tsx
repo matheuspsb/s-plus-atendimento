@@ -75,15 +75,18 @@ const MenuList = () => {
                 }
 
                 return (
-                    <NavGroup
-                        key={item.id}
-                        setSelectedID={setSelectedID}
-                        selectedID={selectedID}
-                        item={item}
-                        lastItem={lastItem!}
-                        remItems={remItems}
-                        lastItemId={lastItemId}
-                    />
+                    <List key={item.id}>
+                        <NavGroup
+                            key={item.id}
+                            setSelectedID={setSelectedID}
+                            selectedID={selectedID}
+                            item={item}
+                            lastItem={lastItem!}
+                            remItems={remItems}
+                            lastItemId={lastItemId}
+                        />
+                    </List>
+                    
                 );
             default:
                 return (

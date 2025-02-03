@@ -2,7 +2,7 @@ import { memo, useMemo } from 'react';
 
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import { Theme } from '@mui/material/styles';
+import { Theme, useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 
@@ -10,12 +10,15 @@ import PerfectScrollbar from 'react-perfect-scrollbar';
 
 import { drawerWidth } from '@/constants/constant';
 import { menuService } from '@/services/menu/menu.service';
+import { Typography } from '@mui/material';
+import { IconLogout } from '@tabler/icons-react';
 import LogoSection from '../logo-section';
 import MenuList from '../menu-list/MenuList';
 import MiniDrawerStyled from './MiniDrawerStyled';
 
 const Sidebar = () => {
     const downMD = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
+    const theme = useTheme();
 
     const { menuMaster } = menuService.useGetMenuMaster();
     const drawerOpen = menuMaster?.isDashboardDrawerOpened;
@@ -38,6 +41,28 @@ const Sidebar = () => {
                 {downMD ? (
                     <Box sx={drawerSX}>
                         <MenuList />
+                        <Box
+								sx={{
+									display: 'flex',
+									alignItems: 'center',
+									gap: 0.5,
+									mt: 1,
+									cursor: 'pointer',
+								}}
+								onClick={() => {}}>
+								<IconLogout
+									stroke={1.5}
+									size="20px"
+									color={theme.palette.error.dark}
+								/>
+								<Typography
+									variant="body2"
+									color={theme.palette.error.dark}
+									fontSize="12px"
+									fontWeight="500">
+                                    Logout
+								</Typography>
+							</Box>
                     </Box>
                 ) : (
                     <PerfectScrollbar style={{ height: 'calc(100vh - 88px)', ...drawerSX }}>

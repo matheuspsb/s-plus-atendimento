@@ -17,12 +17,16 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 
 import AnimateButton from '@/components/ui/animate-button/AnimateButton';
+import { useDispatch } from '@/store';
+import { login } from '@/store/slices/auth';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import { useRouter } from 'next/navigation';
 
 const FormLogin = ({ ...others }: { loginProp?: number }) => {
     const theme = useTheme();
-
+    const router = useRouter();
+    const dispatch = useDispatch();
     const [checked, setChecked] = React.useState(true);
 
     const [showPassword, setShowPassword] = React.useState(false);
@@ -32,6 +36,12 @@ const FormLogin = ({ ...others }: { loginProp?: number }) => {
 
     const handleMouseDownPassword = (event: React.MouseEvent) => {
         event.preventDefault()!;
+    };
+
+    const handleSubmit = () => {
+        const token = Math.random().toString(36).substring(2);
+        dispatch(login(token));
+        router.push('/');
     };
 
     return (
@@ -45,8 +55,8 @@ const FormLogin = ({ ...others }: { loginProp?: number }) => {
                 email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
                 password: Yup.string().max(255).required('Password is required')
             })}
-            onSubmit={async (values) => {
-                console.log('values', values);
+            onSubmit={async () => {
+                handleSubmit();
             }}
         >
             {({ errors, handleBlur, handleChange, handleSubmit, isSubmitting, touched, values }) => (
